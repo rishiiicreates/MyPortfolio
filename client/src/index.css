@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Quicksand:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 210 100% 50%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 172 69% 55%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --accent: 41 100% 71%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+  
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 172 69% 55%;
+    --secondary-foreground: 210 40% 98%;
+    --accent: 41 80% 60%;
+    --accent-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+/* Theme transition */
+*, *::before, *::after {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+html {
+  @apply scroll-smooth;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply font-sans antialiased bg-[#F9F9F9] text-[#333333] dark:bg-[#121212] dark:text-[#f5f5f5];
+}
+
+.font-doodle {
+  font-family: 'Architects Daughter', cursive;
+}
+
+.font-main {
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* Paper elements with light/dark support */
+.paper {
+  @apply relative bg-white dark:bg-gray-800 shadow-md dark:shadow-lg;
+}
+
+.paper::before {
+  content: "";
+  @apply absolute top-0 right-0 border-solid shadow-sm;
+  border-width: 0 16px 16px 0;
+  border-color: #f3f3f3 #f9f9f9;
+}
+
+.dark .paper::before {
+  border-color: #2d3748 #121212;
+}
+
+/* Enhanced paper style with 3D effects */
+.paper-3d {
+  @apply relative bg-white dark:bg-gray-800 rounded-lg transform transition-all;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
+              0 2px 4px rgba(0,0,0,0.07), 
+              0 4px 8px rgba(0,0,0,0.07),
+              0 8px 16px rgba(0,0,0,0.07);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.paper-3d:hover {
+  transform: translateY(-5px) rotateX(2deg) rotateY(-2deg);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.09), 
+              0 3px 6px rgba(0,0,0,0.09), 
+              0 8px 16px rgba(0,0,0,0.09),
+              0 12px 24px rgba(0,0,0,0.09);
+}
+
+.dark .paper-3d {
+  box-shadow: 0 1px 2px rgba(255,255,255,0.03), 
+              0 2px 4px rgba(255,255,255,0.03), 
+              0 4px 8px rgba(255,255,255,0.03),
+              0 8px 16px rgba(255,255,255,0.03);
+}
+
+.dark .paper-3d:hover {
+  box-shadow: 0 1px 3px rgba(255,255,255,0.05), 
+              0 3px 6px rgba(255,255,255,0.05), 
+              0 8px 16px rgba(255,255,255,0.05),
+              0 12px 24px rgba(255,255,255,0.05);
+}
+
+/* Layered card effect */
+.card-stack {
+  position: relative;
+}
+
+.card-stack::before,
+.card-stack::after {
+  content: "";
+  @apply absolute inset-0 bg-white dark:bg-gray-800 rounded-lg;
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+
+.card-stack::before {
+  transform: rotate(-2deg);
+}
+
+.card-stack::after {
+  transform: rotate(2deg);
+}
+
+.card-stack:hover::before {
+  transform: rotate(-4deg);
+}
+
+.card-stack:hover::after {
+  transform: rotate(4deg);
+}
+
+.nav-link {
+  @apply relative;
+}
+
+.nav-link::after {
+  content: "";
+  @apply absolute -bottom-1 left-0 w-0 h-[3px] bg-primary transition-all duration-300 rounded-md;
+}
+
+.nav-link:hover::after {
+  @apply w-full;
+}
+
+@keyframes floating {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes drawing {
+  0% { stroke-dashoffset: 1000; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes wobbling {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+@keyframes sendPlane {
+  0% { transform: translateY(0) rotate(0); opacity: 1; }
+  25% { transform: translateY(-50px) rotate(-10deg); opacity: 1; }
+  100% { transform: translateY(-200px) translateX(200px) rotate(-20deg); opacity: 0; }
+}
+
+.animate-float {
+  animation: floating 3s ease-in-out infinite;
+}
+
+.animate-draw {
+  animation: drawing 2s forwards;
+}
+
+.animate-wobble {
+  animation: wobbling 2s ease-in-out infinite;
+}
+
+.send-plane {
+  animation: sendPlane 1.5s forwards;
+}
+
+.easter-egg {
+  @apply opacity-0 transition-opacity duration-500 pointer-events-none;
+}
+
+.easter-egg.active {
+  @apply opacity-100 pointer-events-auto;
+}
+
+.doodle-path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+}
