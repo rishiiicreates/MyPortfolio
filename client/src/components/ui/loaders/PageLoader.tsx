@@ -85,7 +85,7 @@ export default function PageLoader({
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.8 }}
               >
-                Built form Passion, <span className="text-red-500">❤</span> shaped by logic.
+                Built form Passion, shaped by logic.
               </motion.p>
             </div>
             
