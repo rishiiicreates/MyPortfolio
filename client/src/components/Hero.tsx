@@ -36,14 +36,14 @@ export default function Hero() {
 
   // List of skills with icons
   const skills = [
-    { name: "Web 3.0", icon: <Sparkles className="w-3 h-3 mr-1" /> },
+    { name: "ML", icon: <Sparkles className="w-3 h-3 mr-1" /> },
     { name: "AI", icon: <Zap className="w-3 h-3 mr-1" /> },
-    { name: "App Dev", icon: <Code className="w-3 h-3 mr-1" /> },
-    { name: "JavaScript", icon: <div className="w-3 h-3 mr-1 bg-yellow-500 rounded-sm"></div> },
-    { name: "TypeScript", icon: <div className="w-3 h-3 mr-1 bg-blue-500 rounded-sm"></div> },
+    { name: "UI", icon: <Code className="w-3 h-3 mr-1" /> },
+    { name: "Python", icon: <div className="w-3 h-3 mr-1 bg-yellow-500 rounded-sm"></div> },
+    { name: "TensorFlow", icon: <div className="w-3 h-3 mr-1 bg-blue-500 rounded-sm"></div> },
     { name: "React", icon: <div className="w-3 h-3 mr-1 text-blue-400 rounded-full flex items-center justify-center" style={{ transform: 'scale(1.2)' }}>⚛</div> },
-    { name: "Next.js", icon: <div className="w-3 h-3 mr-1 bg-black dark:bg-white rounded-full"></div> },
-    { name: "Node.js", icon: <div className="w-3 h-3 mr-1 bg-green-500 rounded-sm"></div> },
+    { name: "NumPy", icon: <div className="w-3 h-3 mr-1 bg-black dark:bg-white rounded-full"></div> },
+    { name: "Pandas", icon: <div className="w-3 h-3 mr-1 bg-green-500 rounded-sm"></div> },
     { name: "DSA", icon: <div className="w-3 h-3 mr-1 flex items-center justify-center">🔍</div> },
     { name: "AI is cool I guess", icon: <Zap className="w-3 h-3 mr-1" /> }
   ];
@@ -245,7 +245,7 @@ export default function Hero() {
               }}
             >
               <span className="bg-gradient-to-r from-blue-500 via-teal-500 to-indigo-500 text-transparent bg-clip-text">
-                Creative Developer & Designer
+                I bend data, Machine obey.
               </span>
             </motion.p>
             
@@ -257,7 +257,7 @@ export default function Hero() {
               whileHover={{ scale: 1.02 }}
             >
               <p className="text-base font-medium mb-4 text-gray-800 dark:text-gray-200">
-                Currently a student passionate about Web 3.0, AI, and app development. Building innovative solutions that combine creativity with functionality.
+                Brains for AI, eyes for design, and emotions for Machine. Whether it's neural nets, UI kits, or instincts-I stay winning.
               </p>
               <div className="flex flex-wrap gap-2 mb-1">
                 {skills.map((skill, index) => (
