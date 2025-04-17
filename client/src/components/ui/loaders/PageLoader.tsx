@@ -85,7 +85,7 @@ export default function PageLoader({
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.8 }}
               >
-                Made with <span className="text-red-500">❤️</span> and a bit of magic
+                Built form Passion, <span className="text-red-500">❤</span> shaped by logic.
               </motion.p>
             </div>
             
