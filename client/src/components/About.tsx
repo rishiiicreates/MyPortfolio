@@ -365,7 +365,7 @@ export default function About() {
                 </p>
                 
                 <p className="font-doodle text-lg mb-6 text-gray-800 dark:text-gray-100">
-                  I build for reactions rather than className="font-semibold text-pink-600 dark:text-pink-300">screen. </span> Whether it's a interface or machine learning model, I craft with intention-where every detail has a role, and every <span className="font-semibold text-teal-600 dark:text-teal-300">line of code</span> tells the system something new.
+                  I build for reactions rather than <span className="font-semibold text-pink-600 dark:text-pink-300">screen. </span> Whether it's a interface or machine learning model, I craft with intention-where every detail has a role, and every <span className="font-semibold text-teal-600 dark:text-teal-300">line of code</span> tells the system something new.
                 </p>
                 
                 <p className="font-doodle text-lg relative text-gray-800 dark:text-gray-100">
