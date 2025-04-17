@@ -57,8 +57,8 @@ export default function Skills() {
                 {/* Skills */}
                 <div className="space-y-5">
                   <SkillBar name="Python" percentage={90} />
-                  <SkillBar name="Machne Training & Tuning" percentage={86%} />
-                  <SkillBar name="Data Wrangling" percentage={92%} />
+                  <SkillBar name="Machne Training & Tuning" percentage={86} />
+                  <SkillBar name="Data Wrangling" percentage={92} />
                 </div>
                 
                 <div className="mt-8 text-center">
