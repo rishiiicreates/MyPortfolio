@@ -39,8 +39,8 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
-            <h3 className="font-doodle text-xl text-[#FFD166]">Rishii Creates</h3>
-            <p className="font-doodle text-sm">Creative Developer & Designer</p>
+            <h3 className="font-doodle text-xl text-[#FFD166]">rishiicreates</h3>
+            <p className="font-doodle text-sm">ML isn't magic. It's me behind the curtains.</p>
           </div>
           
           <div className="flex space-x-6 mb-4 md:mb-0">
@@ -53,9 +53,9 @@ export default function Footer() {
           
           <div className="text-center md:text-right">
             <p className="font-doodle text-sm">
-              Made with <span id="footer-heart" className="text-primary cursor-pointer" onClick={handleHeartClick}>❤️</span> and a bit of magic
+              Tech Brain. <span id="footer-heart" className="text-primary cursor-pointer" onClick={handleHeartClick}>❤</span> Designer hands.
             </p>
-            <p className="font-doodle text-xs">© {new Date().getFullYear()} Rishii Creates. All rights reserved.</p>
+            <p className="font-doodle text-xs">© {new Date().getFullYear()} rishiicreates. All rights reserved.</p>
           </div>
         </div>
       </div>
