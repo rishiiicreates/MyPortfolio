@@ -44,7 +44,7 @@ export default function Skills() {
             <div className="paper rounded-lg overflow-hidden h-full shadow-lg transform transition-all duration-300 bg-white dark:bg-gray-800 border-2 border-orange-100 dark:border-orange-900/30">
               <div className="bg-gradient-to-r from-amber-400 to-yellow-400 dark:from-amber-500 dark:to-yellow-500 p-6 text-center border-b-4 border-amber-300 dark:border-amber-600">
                 <h3 className="font-doodle text-2xl font-bold text-[#333333] dark:text-gray-900">WANTED</h3>
-                <p className="font-doodle text-lg text-[#333333] dark:text-gray-900">FOR FRONTEND EXCELLENCE</p>
+                <p className="font-doodle text-lg text-[#333333] dark:text-gray-900">FOR CREATING MINDS THAT LEARN</p>
               </div>
               
               <div className="p-6">
@@ -52,13 +52,13 @@ export default function Skills() {
                   <Code className="text-white text-3xl" />
                 </div>
                 
-                <h4 className="font-doodle text-xl font-bold text-center mb-6 text-gray-800 dark:text-gray-100">Frontend Development</h4>
+                <h4 className="font-doodle text-xl font-bold text-center mb-6 text-gray-800 dark:text-gray-100">Machine Learning</h4>
                 
                 {/* Skills */}
                 <div className="space-y-5">
-                  <SkillBar name="React" percentage={90} />
-                  <SkillBar name="HTML/CSS" percentage={95} />
-                  <SkillBar name="JavaScript" percentage={85} />
+                  <SkillBar name="Python" percentage={90} />
+                  <SkillBar name="Machne Training & Tuning" percentage={86%} />
+                  <SkillBar name="Data Wrangling" percentage={92%} />
                 </div>
                 
                 <div className="mt-8 text-center">
@@ -120,7 +120,7 @@ export default function Skills() {
             <div className="paper rounded-lg overflow-hidden h-full shadow-lg transform transition-all duration-300 bg-white dark:bg-gray-800 border-2 border-teal-100 dark:border-teal-900/30">
               <div className="bg-gradient-to-r from-teal-500 to-emerald-500 dark:from-teal-600 dark:to-emerald-600 p-6 text-center border-b-4 border-teal-400 dark:border-teal-700">
                 <h3 className="font-doodle text-2xl font-bold text-white">WANTED</h3>
-                <p className="font-doodle text-lg text-white">FOR BACKEND WIZARDRY</p>
+                <p className="font-doodle text-lg text-white">FOR SYSTEM DESIGN</p>
               </div>
               
               <div className="p-6">
@@ -128,13 +128,13 @@ export default function Skills() {
                   <Server className="text-white text-3xl" />
                 </div>
                 
-                <h4 className="font-doodle text-xl font-bold text-center mb-6 text-gray-800 dark:text-gray-100">Backend Development</h4>
+                <h4 className="font-doodle text-xl font-bold text-center mb-6 text-gray-800 dark:text-gray-100">AI Product Development</h4>
                 
                 {/* Skills */}
                 <div className="space-y-5">
-                  <SkillBar name="Node.js" percentage={80} />
-                  <SkillBar name="Databases" percentage={75} />
-                  <SkillBar name="API Design" percentage={85} />
+                  <SkillBar name="Model Deployment" percentage={80} />
+                  <SkillBar name="Real-time Predictions" percentage={75} />
+                  <SkillBar name="Scalability" percentage={85} />
                 </div>
                 
                 <div className="mt-8 text-center">
