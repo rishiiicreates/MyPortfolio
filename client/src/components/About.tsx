@@ -361,11 +361,11 @@ export default function About() {
                       animate={{ width: "100%" }}
                       transition={{ delay: 0.6, duration: 0.4 }}
                     />
-                  </span>, a passionate developer and designer with a love for creating playful, interactive experiences.
+                  </span>, the guy who teaches machines to think, designs systems that speak, and turns raw data into digital sorcery.
                 </p>
                 
                 <p className="font-doodle text-lg mb-6 text-gray-800 dark:text-gray-100">
-                  I blend technical expertise with <span className="font-semibold text-pink-600 dark:text-pink-300">creative flair</span> to build digital products that not only function flawlessly but also <span className="font-semibold text-teal-600 dark:text-teal-300">delight users</span> with thoughtful animations and interactions.
+                  I build for reactions rather than className="font-semibold text-pink-600 dark:text-pink-300">screen. </span> Whether it's a interface or machine learning model, I craft with intention-where every detail has a role, and every <span className="font-semibold text-teal-600 dark:text-teal-300">line of code</span> tells the system something new.
                 </p>
                 
                 <p className="font-doodle text-lg relative text-gray-800 dark:text-gray-100">
@@ -448,22 +448,22 @@ export default function About() {
                 {[
                   { 
                     title: "Started Coding", 
-                    description: "Fell in love with creating things on the web",
+                    description: "Found out the web listens when you speak its language.",
                     color: "blue"
                   },
                   { 
                     title: "Studied Design", 
-                    description: "Learned how to make things both functional and beautiful",
+                    description: "Learned that function. without form is only half the story.",
                     color: "amber"
                   },
                   { 
-                    title: "Freelance Work", 
-                    description: "Started creating solutions for real-world clients",
+                    title: "Dove into AI/ML", 
+                    description: "Discovered how wild it is to teach machines to learn like we do-and sometime, better.",
                     color: "emerald"
                   },
                   { 
                     title: "Present Day", 
-                    description: "Constantly learning and building amazing experiences",
+                    description: "Balancing both worlds-building for intelligence, designing for emotion, and forever learning.",
                     color: "violet"
                   }
                 ].map((item, i) => (
