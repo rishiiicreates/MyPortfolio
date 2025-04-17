@@ -53,7 +53,7 @@ export default function Footer() {
           
           <div className="text-center md:text-right">
             <p className="font-doodle text-sm">
-              Tech Brain. <span id="footer-heart" className="text-primary cursor-pointer" onClick={handleHeartClick}>❤</span> Designer hands.
+              Tech Brain. Designer hands.
             </p>
             <p className="font-doodle text-xs">© {new Date().getFullYear()} rishiicreates. All rights reserved.</p>
           </div>
