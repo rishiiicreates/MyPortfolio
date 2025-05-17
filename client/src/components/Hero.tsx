@@ -293,7 +293,7 @@ export default function Hero() {
               </motion.a>
               
               <motion.a 
-                href="#contact" 
+                href="https://gig-ep35.onrender.com" 
                 className="bg-white dark:bg-gray-800 text-primary dark:text-primary-foreground border-2 border-primary font-doodle py-3 px-8 rounded-full shadow-lg hover:shadow-xl hover:bg-primary/5 dark:hover:bg-primary/10 transform transition-all duration-300"
                 variants={buttonVariants}
                 initial="initial"
