@@ -1,55 +1,188 @@
-import { motion } from "framer-motion";
-import DoodlePath from "@/components/ui/DoodlePath";
-import ProjectCard from "@/components/ui/ProjectCard";
-import { portfolioProjects } from "@/data/portfolioData";
-import { useScrollAnimation } from "@/hooks/use-scroll-animation";
-import { staggerContainerEnhanced, textVariants } from "@/lib/animations";
-import { useTheme } from "@/hooks/use-theme";
+import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
+import { useRef } from "react";
 
-export default function Projects() {
-  const [headingRef, headingControls] = useScrollAnimation(0.1);
-  const [projectsRef, projectsControls] = useScrollAnimation(0.1);
-  const { theme } = useTheme();
+const projects = [
+  {
+    id: "01",
+    title: "DASHMETRICS",
+    category: "SaaS Analytics Platform",
+    image: "/dashmetrics.png",
+    description: "A comprehensive social media analytics dashboard for creators and brands. Real-time ingestion pipelines processing 50k+ events/sec using Python and AWS.",
+    tech: ["Next.js", "TypeScript", "Python", "AWS"],
+    link: "https://github.com/rishiiicreates",
+    colSpan: "col-span-1 md:col-span-8",
+    parallaxSpeed: 0.1
+  },
+  {
+    id: "02",
+    title: "HOUSEL",
+    category: "AI Smart Home App",
+    image: "/housel.png",
+    description: "An adaptive smart home control interface powered by on-device AI. learns user habits to automate climate and lighting.",
+    tech: ["React Native", "TensorFlow Lite", "Node.js"],
+    link: "https://github.com/rishiiicreates",
+    colSpan: "col-span-1 md:col-span-4",
+    parallaxSpeed: 0.2 // Moves faster
+  },
+  {
+    id: "03",
+    title: "DOCMIND",
+    category: "Intelligent Document Processing",
+    image: "/docmind.png",
+    description: "Enterprise-grade RAG system for legal and medical document analysis. Features semantic search and citation-backed Q&A.",
+    tech: ["LangChain", "Pinecone", "OpenAI", "React"],
+    link: "https://github.com/rishiiicreates",
+    colSpan: "col-span-1 md:col-span-4",
+    parallaxSpeed: 0.15
+  },
+  {
+    id: "04",
+    title: "NEURALFLUX",
+    category: "Generative Art Engine",
+    image: "/neuralflux.png",
+    description: "A node-based generative art platform using stable diffusion pipelines. Allows real-time parameter tweaking for digital artists.",
+    tech: ["WebGL", "Three.js", "Python Fast API"],
+    link: "https://github.com/rishiiicreates",
+    colSpan: "col-span-1 md:col-span-8",
+    parallaxSpeed: 0.05 // Moves slower
+  },
+  {
+    id: "05",
+    title: "AI AGENTIC",
+    category: "Autonomous Systems Research",
+    image: "/ai-agentic.png",
+    description: "Experimental framework for autonomous LLM agents capable of complex reasoning and multi-step task execution.",
+    tech: ["LangGraph", "Gemini 1.5 Pro", "Vector DB"],
+    link: "https://github.com/rishiiicreates",
+    colSpan: "col-span-1 md:col-span-12",
+    parallaxSpeed: 0
+  }
+];
+
+function ParallaxProject({ project, index }: { project: any, index: number }) {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const mouseX = useSpring(x, { stiffness: 150, damping: 15 });
+  const mouseY = useSpring(y, { stiffness: 150, damping: 15 });
+
+  function handleMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
+    const { left, top, width, height } = currentTarget.getBoundingClientRect();
+    const xPct = (clientX - left) / width - 0.5;
+    const yPct = (clientY - top) / height - 0.5;
+    x.set(xPct * 10); // Tilt amount
+    y.set(yPct * 10);
+  }
+
+  function handleMouseLeave() {
+    x.set(0);
+    y.set(0);
+  }
+
+  // Calculate parallax offset based on speed
+  const parallaxY = useTransform(scrollYProgress, [0, 1], [50 * project.parallaxSpeed, -50 * project.parallaxSpeed]);
 
   return (
-    <section id="projects" className="py-20 relative overflow-hidden bg-white dark:bg-gray-900 transition-colors duration-300">
-      {/* Background decorative elements */}
-      <div className="absolute top-0 right-0 w-40 h-40 bg-blue-100 dark:bg-blue-900/30 rounded-full opacity-20 -translate-y-1/2 translate-x-1/4"></div>
-      <div className="absolute bottom-0 left-0 w-60 h-60 bg-teal-100 dark:bg-teal-900/30 rounded-full opacity-20 translate-y-1/3 -translate-x-1/4"></div>
-      
-      <div className="container mx-auto px-4">
-        <motion.h2 
-          ref={headingRef}
-          className="text-4xl md:text-5xl font-doodle font-bold text-center mb-16 text-gray-900 dark:text-white"
-          variants={textVariants}
-          initial="hidden"
-          animate={headingControls}
-        >
-          <span className="relative z-10 inline-block">
-            My Projects
-            <motion.div 
-              className="absolute -bottom-2 left-0 w-full" 
-              initial={{ width: 0 }}
-              animate={{ width: "100%" }}
-              transition={{ delay: 0.3, duration: 0.8, ease: "easeInOut" }}
-            >
-              <DoodlePath color={theme === 'dark' ? "rgba(96, 165, 250, 0.7)" : "rgba(59, 130, 246, 0.7)"} />
-            </motion.div>
+    <motion.div
+      ref={ref}
+      style={{ y: parallaxY }}
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.8, delay: index * 0.1, ease: "easeOut" }}
+      className={`group relative ${project.colSpan} perspective-1000`}
+    >
+      <motion.a
+        href={project.link}
+        className="block cursor-none-hover"
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        style={{
+          rotateX: mouseY.get() * -1, // Invert for natural feel
+          rotateY: mouseX,
+          transformStyle: "preserve-3d"
+        }}
+      >
+        {/* Image Container */}
+        <div className="relative overflow-hidden w-full aspect-[16/10] mb-6 border border-border/50 bg-secondary/5" style={{ transform: "translateZ(0)" }}>
+          <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/5 transition-colors duration-500 z-10" />
+          <motion.img
+            src={project.image}
+            alt={project.title}
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="w-full h-full object-cover filter grayscale-[10%] group-hover:grayscale-0"
+          />
+
+          {/* Floating Action Button - 3D Pop */}
+          <div className="absolute top-4 right-4 w-12 h-12 bg-background rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 z-20 shadow-lg border border-border"
+            style={{ transform: "translateZ(20px)" }}
+          >
+            <ArrowUpRight className="w-5 h-5 text-accent" />
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="flex flex-col gap-2 relative z-20" style={{ transform: "translateZ(10px)" }}>
+          <div className="flex items-center gap-4">
+            <span className="font-mono text-xs text-accent font-bold">
+              ({project.id})
+            </span>
+            <span className="font-mono text-xs text-foreground/60 uppercase tracking-widest">
+              {project.category}
+            </span>
+          </div>
+
+          <h3 className="font-display font-bold text-3xl md:text-5xl text-foreground group-hover:text-accent transition-colors">
+            {project.title}
+          </h3>
+
+          <p className="font-sans text-foreground/70 max-w-xl text-lg mt-2 line-clamp-2 leading-relaxed">
+            {project.description}
+          </p>
+
+          <div className="flex flex-wrap gap-2 mt-4">
+            {project.tech.map((t: string, i: number) => (
+              <span key={i} className="px-3 py-1 border border-border text-[10px] uppercase tracking-wider font-mono text-foreground/60 bg-background/50">
+                {t}
+              </span>
+            ))}
+          </div>
+        </div>
+      </motion.a>
+    </motion.div>
+  );
+}
+
+export default function Work() {
+  return (
+    <section id="projects" className="py-32 bg-background relative overflow-hidden">
+      <div className="container mx-auto px-6 md:px-12">
+
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row justify-between items-end mb-32 border-b border-muted pb-8">
+          <h2 className="font-display font-bold text-6xl md:text-8xl uppercase text-foreground leading-[0.85] tracking-tighter">
+            Selected <br /> <span className="text-accent">Work</span>
+          </h2>
+          <span className="font-mono text-sm text-foreground/60 uppercase tracking-widest mt-6 md:mt-0">
+            (2024 - 2025)
           </span>
-        </motion.h2>
-        
-        <motion.div 
-          ref={projectsRef}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          variants={staggerContainerEnhanced}
-          initial="hidden"
-          animate={projectsControls}
-          viewport={{ once: false, amount: 0.25 }}
-        >
-          {portfolioProjects.map((project, index) => (
-            <ProjectCard key={index} project={project} index={index} />
+        </div>
+
+        {/* Masonry Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-y-32">
+          {projects.map((project, index) => (
+            <ParallaxProject key={project.id} project={project} index={index} />
           ))}
-        </motion.div>
+        </div>
+
       </div>
     </section>
   );
