@@ -9,6 +9,7 @@ import Journey from "@/pages/Journey";
 import Chatbot from "@/components/chatbot/Chatbot";
 import { ThemeProvider } from "@/hooks/use-theme";
 import { useState, useEffect } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 function Router() {
   return (
@@ -56,6 +57,7 @@ function App() {
               <Toaster />
               {/* Embedded AI Assistant */}
               <Chatbot />
+              <Analytics />
             </div>
           </SmoothScroll>
         )}
