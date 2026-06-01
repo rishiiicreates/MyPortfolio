@@ -90,37 +90,38 @@ export default function Header() {
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
               className="fixed top-0 right-0 h-full w-full md:w-[40%] bg-accent z-50 flex flex-col justify-center items-center shadow-2xl"
             >
-              <div className="flex flex-col gap-6 md:gap-8 text-center">
+              <div className="flex flex-col gap-6 md:gap-8 items-center text-center">
                 {menuItems.map((item, index) => (
-                  <motion.a
-                    key={index}
-                    href={item.href}
-                    onClick={(e) => {
-                      if (item.href.startsWith("/#")) {
-                        // Let default behavior handle hash links if on same page
-                        // but if we are on another page, we should navigate to home first
-                        if (window.location.pathname !== "/") {
-                          e.preventDefault();
-                          window.location.href = item.href; // Full reload to get to home and scroll
+                  <Magnetic key={index}>
+                    <motion.a
+                      href={item.href}
+                      onClick={(e) => {
+                        if (item.href.startsWith("/#")) {
+                          // Let default behavior handle hash links if on same page
+                          // but if we are on another page, we should navigate to home first
+                          if (window.location.pathname !== "/") {
+                            e.preventDefault();
+                            window.location.href = item.href; // Full reload to get to home and scroll
+                          } else {
+                            setIsOpen(false);
+                          }
                         } else {
+                          e.preventDefault();
                           setIsOpen(false);
+                          window.history.pushState(null, '', item.href);
+                          window.dispatchEvent(new Event('pushstate'));
+                          // Or use wouter's setLocation:
+                          setLocation(item.href);
                         }
-                      } else {
-                        e.preventDefault();
-                        setIsOpen(false);
-                        window.history.pushState(null, '', item.href);
-                        window.dispatchEvent(new Event('pushstate'));
-                        // Or use wouter's setLocation:
-                        setLocation(item.href);
-                      }
-                    }}
-                    initial={{ opacity: 0, x: 50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.2 + (index * 0.1), duration: 0.5 }}
-                    className="font-display font-bold text-5xl md:text-7xl text-background uppercase tracking-tight hover:text-black transition-colors cursor-pointer"
-                  >
-                    {item.title}
-                  </motion.a>
+                      }}
+                      initial={{ opacity: 0, x: 50 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.2 + (index * 0.1), duration: 0.5 }}
+                      className="font-display font-bold text-5xl md:text-7xl text-background uppercase tracking-tight hover:text-black transition-colors cursor-pointer"
+                    >
+                      {item.title}
+                    </motion.a>
+                  </Magnetic>
                 ))}
               </div>
 

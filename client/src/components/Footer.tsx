@@ -1,3 +1,5 @@
+import Magnetic from "@/components/Magnetic";
+
 export default function Footer() {
   return (
     <footer className="py-4 bg-background border-t border-border">
@@ -6,12 +8,12 @@ export default function Footer() {
           © {new Date().getFullYear()} Hrishikesh Yadav
         </div>
 
-        <div className="flex gap-6">
-          <a href="https://github.com/rishiiicreates" className="text-sm font-mono uppercase tracking-widest text-foreground/50 hover:text-accent transition-colors">GitHub</a>
-          <a href="https://x.com/rishiicreates" className="text-sm font-mono uppercase tracking-widest text-foreground/50 hover:text-accent transition-colors">Twitter (X)</a>
-          <a href="https://www.linkedin.com/in/hrishikesh-yadav-b4a736360/" className="text-sm font-mono uppercase tracking-widest text-foreground/50 hover:text-accent transition-colors">LinkedIn</a>
-          <a href="https://www.instagram.com/rishiicreatess/" className="text-sm font-mono uppercase tracking-widest text-foreground/50 hover:text-accent transition-colors">Instagram</a>
-          <a href="mailto:rishiicreates@gmail.com" className="text-sm font-mono uppercase tracking-widest text-foreground/50 hover:text-accent transition-colors">Email</a>
+        <div className="flex gap-6 flex-wrap md:flex-nowrap">
+          <Magnetic><a href="https://github.com/rishiiicreates" className="text-sm font-mono uppercase tracking-widest text-foreground/50 hover:text-accent transition-colors block">GitHub</a></Magnetic>
+          <Magnetic><a href="https://x.com/rishiicreates" className="text-sm font-mono uppercase tracking-widest text-foreground/50 hover:text-accent transition-colors block">Twitter (X)</a></Magnetic>
+          <Magnetic><a href="https://www.linkedin.com/in/hrishikesh-yadav-b4a736360/" className="text-sm font-mono uppercase tracking-widest text-foreground/50 hover:text-accent transition-colors block">LinkedIn</a></Magnetic>
+          <Magnetic><a href="https://www.instagram.com/rishiicreatess/" className="text-sm font-mono uppercase tracking-widest text-foreground/50 hover:text-accent transition-colors block">Instagram</a></Magnetic>
+          <Magnetic><a href="mailto:rishiicreates@gmail.com" className="text-sm font-mono uppercase tracking-widest text-foreground/50 hover:text-accent transition-colors block">Email</a></Magnetic>
         </div>
       </div>
     </footer>

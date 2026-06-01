@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { useRef } from "react";
+import Magnetic from "@/components/Magnetic";
 
 export default function Hero() {
   const ref = useRef(null);
@@ -57,16 +58,20 @@ export default function Hero() {
         </motion.div>
 
         {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-32 left-6 md:left-12 flex items-center gap-4 group cursor-pointer"
-          onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-        >
-          <div className="w-2 h-2 rounded-full bg-accent group-hover:scale-150 transition-transform duration-500"></div>
-          <span className="font-mono text-xs uppercase tracking-widest text-[#DDDBD6] drop-shadow-md group-hover:text-accent transition-colors">Scroll to explore</span>
-        </motion.div>
+        <div className="absolute bottom-32 left-6 md:left-12 z-20 w-fit">
+          <Magnetic>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.5, duration: 1 }}
+              className="flex items-center gap-4 group cursor-pointer w-fit"
+              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              <div className="w-2 h-2 rounded-full bg-accent group-hover:scale-150 transition-transform duration-500"></div>
+              <span className="font-mono text-xs uppercase tracking-widest text-[#DDDBD6] drop-shadow-md group-hover:text-accent transition-colors">Scroll to explore</span>
+            </motion.div>
+          </Magnetic>
+        </div>
       </div>
     </section>
   );
