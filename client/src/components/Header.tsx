@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, X } from "lucide-react";
+import { useLocation } from "wouter";
 
 import Magnetic from "@/components/Magnetic";
 
@@ -8,6 +9,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isBottom, setIsBottom] = useState(false);
+  const [, setLocation] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -93,11 +95,29 @@ export default function Header() {
                   <motion.a
                     key={index}
                     href={item.href}
-                    onClick={() => setIsOpen(false)}
+                    onClick={(e) => {
+                      if (item.href.startsWith("/#")) {
+                        // Let default behavior handle hash links if on same page
+                        // but if we are on another page, we should navigate to home first
+                        if (window.location.pathname !== "/") {
+                          e.preventDefault();
+                          window.location.href = item.href; // Full reload to get to home and scroll
+                        } else {
+                          setIsOpen(false);
+                        }
+                      } else {
+                        e.preventDefault();
+                        setIsOpen(false);
+                        window.history.pushState(null, '', item.href);
+                        window.dispatchEvent(new Event('pushstate'));
+                        // Or use wouter's setLocation:
+                        setLocation(item.href);
+                      }
+                    }}
                     initial={{ opacity: 0, x: 50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.2 + (index * 0.1), duration: 0.5 }}
-                    className="font-display font-bold text-5xl md:text-7xl text-background uppercase tracking-tight hover:text-black transition-colors"
+                    className="font-display font-bold text-5xl md:text-7xl text-background uppercase tracking-tight hover:text-black transition-colors cursor-pointer"
                   >
                     {item.title}
                   </motion.a>

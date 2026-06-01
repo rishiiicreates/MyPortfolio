@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
+import { Link } from "wouter";
 import Magnetic from "@/components/Magnetic";
 import Header from "@/components/Header";
 import About from "@/components/About";
@@ -157,12 +158,12 @@ export default function AboutPage() {
             <div className="py-16 px-6 md:px-12">
                 <div className="max-w-4xl mx-auto">
                     <Magnetic>
-                        <a href="/" className="inline-flex items-center gap-2 group">
+                        <Link href="/" className="inline-flex items-center gap-2 group">
                             <div className="w-10 h-10 rounded-full border border-foreground/20 flex items-center justify-center group-hover:border-accent group-hover:bg-accent/5 transition-colors">
                                 <ArrowLeft className="w-4 h-4 group-hover:scale-110 transition-transform" />
                             </div>
                             <span className="font-mono text-xs uppercase tracking-widest text-foreground/60 group-hover:text-foreground transition-colors">Back Home</span>
-                        </a>
+                        </Link>
                     </Magnetic>
                 </div>
             </div>
