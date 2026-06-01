@@ -1,0 +1,64 @@
+import { SVGProps } from "react";
+
+export default function StrawHat(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg 
+      xmlns="http://www.w3.org/2000/svg" 
+      viewBox="0 0 100 60" 
+      fill="currentColor"
+      {...props}
+    >
+      <path 
+        d="M95,35c0,0-10-25-45-25S5,35,5,35s-10,5,0,10c0,0,20,10,45,10s45-10,45-10C105,40,95,35,95,35z" 
+        strokeWidth="2"
+        stroke="#333"
+      />
+      <ellipse 
+        cx="50" 
+        cy="30" 
+        rx="30" 
+        ry="10" 
+        fill="#f6e58d" 
+        stroke="#333" 
+        strokeWidth="2"
+      />
+      <path 
+        d="M35,25c0,0,5,10,15,10s15-10,15-10" 
+        fill="none" 
+        stroke="#333" 
+        strokeWidth="2" 
+        strokeLinecap="round"
+      />
+      <line 
+        x1="30" 
+        y1="30" 
+        x2="70" 
+        y2="30" 
+        stroke="#333" 
+        strokeWidth="2" 
+        strokeDasharray="3,3"
+      />
+      <path 
+        d="M25,30c0,0,0,5,5,5" 
+        fill="none" 
+        stroke="#333" 
+        strokeWidth="1.5" 
+        strokeLinecap="round"
+      />
+      <path 
+        d="M75,30c0,0,0,5-5,5" 
+        fill="none" 
+        stroke="#333" 
+        strokeWidth="1.5" 
+        strokeLinecap="round"
+      />
+      <path 
+        d="M22,40c0,0,5-2,13-2s10,2,15,2s10-2,15-2s13,2,13,2" 
+        fill="none" 
+        stroke="#333" 
+        strokeWidth="1.5" 
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}

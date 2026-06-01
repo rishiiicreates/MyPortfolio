@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Valiente Brands Palette */
+    --background: #DDDBD6;
+    /* Warm Beige */
+    --foreground: #1A1A1A;
+    /* Near Black */
+
+    --card: #E8E6E1;
+    /* Slightly lighter beige for cards */
+    --card-foreground: #1A1A1A;
+
+    --popover: #E8E6E1;
+    --popover-foreground: #1A1A1A;
+
+    --primary: #1A1A1A;
+    --primary-foreground: #DDDBD6;
+
+    --secondary: #CCCAC4;
+    /* Darker beige for contrast */
+    --secondary-foreground: #1A1A1A;
+
+    --muted: #CCCAC4;
+    --muted-foreground: #5A5A5A;
+
+    --accent: #FF1A00;
+    /* Valiente Red */
+    --accent-foreground: #FFFFFF;
+
+    --destructive: #FF1A00;
+    --destructive-foreground: #FFFFFF;
+
+    --border: #C4C2BC;
+    --input: #C4C2BC;
+    --ring: #FF1A00;
+
+    --radius: 0px;
+    /* Sharp corners like Valiente */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    /* Valiente style headers */
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-background/60 backdrop-blur-md border border-border/50;
+  }
+
+  .section-padding {
+    @apply py-20 px-4 md:px-8 max-w-7xl mx-auto;
+  }
+
+  .hover-card-effect {
+    @apply transition-all duration-300 hover:translate-y-[-2px] hover:shadow-lg hover:border-accent/40;
+  }
+}
+
+/* Minimal animations */
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 90;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Equalizer animations */
+@keyframes eq-bar {
+  0%, 100% { height: 0.5rem; }
+  50% { height: 1.25rem; }
+}
+.eq-bar-1 { animation: eq-bar 0.8s ease-in-out infinite; }
+.eq-bar-2 { animation: eq-bar 0.8s ease-in-out infinite 0.15s; }
+.eq-bar-3 { animation: eq-bar 0.8s ease-in-out infinite 0.3s; }
