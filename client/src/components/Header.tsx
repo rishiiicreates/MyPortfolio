@@ -59,12 +59,12 @@ export default function Header() {
       </div>
 
       {/* Bottom Frame Elements (Desktop Only) */}
-      <div className={`fixed bottom-0 left-0 w-full z-40 px-6 md:px-12 py-6 md:py-8 justify-between items-end hidden md:flex pointer-events-none mix-blend-difference text-white transition-opacity duration-300 ${isBottom ? 'opacity-0' : 'opacity-100'}`}>
+      <div className={`fixed bottom-0 left-0 w-full z-40 px-6 md:px-12 pb-2 pt-6 md:pb-3 md:pt-8 justify-between items-end hidden md:flex pointer-events-none mix-blend-difference text-white transition-opacity duration-300 ${isBottom ? 'opacity-0' : 'opacity-100'}`}>
         <span className="font-mono text-xs uppercase tracking-widest">
           AI Product Engineer
         </span>
         <span className="font-mono text-xs uppercase tracking-widest">
-          ©{new Date().getFullYear()}
+          ©rishiicreates
         </span>
       </div>
 

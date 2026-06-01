@@ -105,7 +105,7 @@ const Chatbot = () => {
     <>
       {!isOpen && (
         <motion.button
-          className="fixed bottom-6 right-6 z-[9999] w-14 h-14 rounded-full bg-foreground text-background shadow-xl flex items-center justify-center border border-border/20"
+          className="fixed bottom-16 right-6 z-[9999] w-14 h-14 rounded-full bg-foreground text-background shadow-xl flex items-center justify-center border border-border/20"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => setIsOpen(true)}
@@ -124,12 +124,12 @@ const Chatbot = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="fixed bottom-6 right-6 z-[9998] w-[90vw] sm:w-[400px] h-[600px] bg-background border border-foreground/10 shadow-2xl flex flex-col"
+            className="fixed bottom-16 right-6 z-[9998] w-[90vw] sm:w-[400px] h-[600px] bg-background/95 backdrop-blur-xl border border-border rounded-2xl shadow-2xl flex flex-col overflow-hidden"
           >
             {/* Header */}
-            <div className="bg-background p-4 flex items-center justify-between border-b border-foreground/10">
+            <div className="bg-transparent p-4 flex items-center justify-between border-b border-border">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-accent flex items-center justify-center text-background font-bold font-display">
+                <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center text-background font-bold font-display">
                   AI
                 </div>
                 <div>
@@ -142,7 +142,7 @@ const Chatbot = () => {
               </div>
               <button
                 onClick={() => setIsOpen(false)}
-                className="p-1 hover:text-accent transition-colors"
+                className="w-8 h-8 flex items-center justify-center text-foreground/40 hover:text-foreground transition-colors rounded-full hover:bg-foreground/5"
               >
                 <X size={20} />
               </button>
@@ -157,8 +157,8 @@ const Chatbot = () => {
                 >
                   <div
                     className={`max-w-[85%] p-4 text-sm font-sans leading-relaxed ${message.type === "user"
-                      ? "bg-foreground text-background"
-                      : "bg-background border border-foreground/10 text-foreground"
+                      ? "bg-foreground text-background rounded-2xl rounded-tr-sm"
+                      : "bg-secondary/50 border border-border text-foreground rounded-2xl rounded-tl-sm backdrop-blur-sm"
                       }`}
                   >
                     <p>{message.text}</p>
@@ -168,10 +168,10 @@ const Chatbot = () => {
 
               {isTyping && (
                 <div className="flex justify-start">
-                  <div className="bg-secondary p-3 rounded-2xl rounded-tl-none flex gap-1">
-                    <span className="w-1.5 h-1.5 bg-foreground/40 rounded-full animate-bounce"></span>
-                    <span className="w-1.5 h-1.5 bg-foreground/40 rounded-full animate-bounce delay-100"></span>
-                    <span className="w-1.5 h-1.5 bg-foreground/40 rounded-full animate-bounce delay-200"></span>
+                  <div className="bg-secondary/50 border border-border p-4 rounded-2xl rounded-tl-sm flex gap-1.5 backdrop-blur-sm">
+                    <span className="w-2 h-2 bg-accent rounded-full animate-bounce" style={{ animationDelay: '-0.3s' }}></span>
+                    <span className="w-2 h-2 bg-accent rounded-full animate-bounce" style={{ animationDelay: '-0.15s' }}></span>
+                    <span className="w-2 h-2 bg-accent rounded-full animate-bounce" style={{ animationDelay: '0s' }}></span>
                   </div>
                 </div>
               )}
@@ -179,16 +179,16 @@ const Chatbot = () => {
             </div>
 
             {/* Input */}
-            <div className="p-4 border-t border-border bg-background">
+            <div className="p-4 border-t border-border bg-transparent">
               {/* Suggestions */}
               {messages.length === 1 && (
                 <div className="flex gap-2 overflow-x-auto pb-4 mb-2 no-scrollbar">
-                  {["Tell me about DashMetrics", "What is NeuralFlux?", "Experience with RAG?"].map((q) => (
+                  {["What are your top skills?", "Tell me about your education", "How can I contact you?"].map((q) => (
                     <button
                       key={q}
                       type="button"
                       onClick={() => { setInputValue(q); setTimeout(() => handleSendMessage(), 100); }}
-                      className="whitespace-nowrap text-xs px-4 py-2 bg-background border border-foreground/20 hover:border-accent hover:text-accent font-mono uppercase tracking-wider transition-colors"
+                      className="whitespace-nowrap text-xs px-4 py-2 bg-secondary/30 border border-border rounded-full hover:border-accent hover:text-accent font-mono uppercase tracking-wider transition-colors"
                     >
                       {q}
                     </button>
@@ -205,12 +205,12 @@ const Chatbot = () => {
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   placeholder="ASK ME ANYTHING..."
-                  className="flex-1 bg-transparent border-b border-foreground/20 px-2 py-2 text-sm font-mono focus:outline-none focus:border-accent transition-colors placeholder:text-foreground/40"
+                  className="flex-1 bg-secondary/30 border border-border rounded-xl px-4 py-2 text-sm font-mono focus:outline-none focus:border-accent transition-colors placeholder:text-foreground/40"
                 />
                 <button
                   type="submit"
                   disabled={!inputValue.trim()}
-                  className="p-2 bg-accent text-background hover:opacity-90 disabled:opacity-50 transition-opacity"
+                  className="p-3 bg-accent text-background rounded-xl hover:opacity-90 disabled:opacity-50 transition-opacity flex items-center justify-center"
                 >
                   <Send size={18} />
                 </button>

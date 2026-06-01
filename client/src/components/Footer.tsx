@@ -2,7 +2,7 @@ import Magnetic from "@/components/Magnetic";
 
 export default function Footer() {
   return (
-    <footer className="py-4 bg-background border-t border-border">
+    <footer className="pt-8 pb-28 md:pb-12 bg-background border-t border-border">
       <div className="container mx-auto px-6 md:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
         <div className="text-sm font-mono uppercase tracking-widest text-foreground/50">
           © {new Date().getFullYear()} Hrishikesh Yadav
