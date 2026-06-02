@@ -85,7 +85,7 @@ Create a `.env` file in the project root.
 # Optional: enables AI chatbot responses
 GEMINI_API_KEY=your_api_key_here
 
-# Required only if you use drizzle migrations
+# Required only if you use Drizzle migrations
 DATABASE_URL=postgres_connection_string
 ```
 
