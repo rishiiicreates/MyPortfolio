@@ -5,12 +5,12 @@ import { useRef } from "react";
 const projects = [
   {
     id: "01",
-    title: "EMAIL TRIAGE AGENT",
-    category: "AI Agent Benchmarking",
-    image: "/email-triage-agent.png",
-    description: "An OpenEnv-compliant benchmarking API using FastAPI and Docker to evaluate LLM agents on multi-step reasoning, semantic routing, and PII detection. Features dense step-reward function and deterministic synthetic data pipeline.",
-    tech: ["Python", "FastAPI", "Docker", "Hugging Face"],
-    link: "https://github.com/rishiiicreates/email-triage-env",
+    title: "RAWFY",
+    category: "AI Web Perception",
+    image: "/rawfy.jpeg",
+    description: "Universal web perception skill for AI agents — converts any URL into structured, agent-readable content with described images, transcribed video, and interactive element maps.",
+    tech: ["Python", "AI", "Web Scraping"],
+    link: "https://github.com/rishiiicreates/rawfy",
     colSpan: "col-span-1 md:col-span-8",
     parallaxSpeed: 0.1
   },
@@ -27,36 +27,36 @@ const projects = [
   },
   {
     id: "03",
+    title: "EMAIL TRIAGE AGENT",
+    category: "AI Agent Benchmarking",
+    image: "/email-triage-agent.jpeg",
+    description: "An OpenEnv-compliant benchmarking API using FastAPI and Docker to evaluate LLM agents on multi-step reasoning, semantic routing, and PII detection. Features dense step-reward function and deterministic synthetic data pipeline.",
+    tech: ["Python", "FastAPI", "Docker", "Hugging Face"],
+    link: "https://github.com/rishiiicreates/email-triage-env",
+    colSpan: "col-span-1 md:col-span-8",
+    parallaxSpeed: 0.1
+  },
+  {
+    id: "04",
     title: "DASHMETRICS",
     category: "SaaS Analytics Platform",
     image: "/dashmetrics.png",
     description: "A comprehensive social media analytics dashboard for creators and brands. Real-time ingestion pipelines processing 50k+ events/sec using Python and AWS.",
     tech: ["Next.js", "TypeScript", "Python", "AWS"],
     link: "https://github.com/rishiiicreates",
-    colSpan: "col-span-1 md:col-span-8",
+    colSpan: "col-span-1 md:col-span-4",
     parallaxSpeed: 0.1
   },
   {
-    id: "04",
+    id: "05",
     title: "HOUSEL",
     category: "AI Smart Home App",
     image: "/housel.png",
     description: "An adaptive smart home control interface powered by on-device AI. learns user habits to automate climate and lighting.",
     tech: ["React Native", "TensorFlow Lite", "Node.js"],
     link: "https://github.com/rishiiicreates",
-    colSpan: "col-span-1 md:col-span-4",
+    colSpan: "col-span-1 md:col-span-8",
     parallaxSpeed: 0.2
-  },
-  {
-    id: "05",
-    title: "DOCMIND",
-    category: "Intelligent Document Processing",
-    image: "/docmind.png",
-    description: "Enterprise-grade RAG system for legal and medical document analysis. Features semantic search and citation-backed Q&A.",
-    tech: ["LangChain", "Pinecone", "OpenAI", "React"],
-    link: "https://github.com/rishiiicreates",
-    colSpan: "col-span-1 md:col-span-4",
-    parallaxSpeed: 0.15
   },
   {
     id: "06",
@@ -66,17 +66,17 @@ const projects = [
     description: "A node-based generative art platform using stable diffusion pipelines. Allows real-time parameter tweaking for digital artists.",
     tech: ["WebGL", "Three.js", "Python Fast API"],
     link: "https://github.com/rishiiicreates",
-    colSpan: "col-span-1 md:col-span-8",
+    colSpan: "col-span-1 md:col-span-4",
     parallaxSpeed: 0.05
   },
   {
     id: "07",
-    title: "AI AGENTIC",
-    category: "Autonomous Systems Research",
-    image: "/ai-agentic.png",
-    description: "Experimental framework for autonomous LLM agents capable of complex reasoning and multi-step task execution.",
-    tech: ["LangGraph", "Gemini 1.5 Pro", "Vector DB"],
-    link: "https://github.com/rishiiicreates",
+    title: "3D SOLAR SYSTEM",
+    category: "Interactive 3D Web Experience",
+    image: "/webgl.png",
+    description: "A 3D solar system simulation featuring planetary orbits, interactive controls, and realistic textures.",
+    tech: ["Three.js", "WebGL", "Vite"],
+    link: "https://the-pro-astronauts.vercel.app/",
     colSpan: "col-span-1 md:col-span-12",
     parallaxSpeed: 0
   }
