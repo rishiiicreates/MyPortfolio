@@ -183,7 +183,7 @@ const Chatbot = () => {
               {/* Suggestions */}
               {messages.length === 1 && (
                 <div className="flex gap-2 overflow-x-auto pb-4 mb-2 no-scrollbar">
-                  {["What are your top skills?", "Tell me about your education", "How can I contact you?"].map((q) => (
+                  {["Tell me about your projects", "What are your top skills?", "How can I contact you?"].map((q) => (
                     <button
                       key={q}
                       type="button"

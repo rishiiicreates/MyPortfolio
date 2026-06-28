@@ -30,8 +30,12 @@ About Hrishikesh Yadav:
     - Wildish & Co. | Generative AI Engineer (Freelance) (Oct 2024 - Aug 2025): Developed AI-driven automated debugging pipeline, fine-tuned transformer models for anomaly detection.
 
 - **Key Projects**:
-    - Email Triage Agent Environment (Python, FastAPI, Docker, Hugging Face): OpenEnv-compliant benchmarking API to evaluate LLM agents. GitHub: rishiiicreates/email-triage-env
-    - Doubt Solver (Python, LangChain, ChromaDB, Ollama, Streamlit): RAG pipeline for academic queries across a vector knowledge base. GitHub: rishiiicreates/srm-doubt-solver
+    - DashMetrics: SaaS platform to centralize and simplify social media analytics. (React, Next.js, TypeScript, Tailwind CSS)
+    - NFT Marketplace: Decentralized marketplace for digital artists to mint, sell, and trade NFTs. (React, Solidity, Ethereum)
+    - Nudge Local Market App: Walkthrough marketplace app for local vendors and businesses. (React Native, Firebase, Google Maps API)
+    - Housel AI Reminder App: Intelligent reminder application that learns user's daily routines. (React, TypeScript, Machine Learning, OpenAI API)
+    - AI Content Generator: Application leveraging AI to help creators generate unique content. (Next.js, OpenAI API)
+    - DeFi Dashboard App: Mobile app that tracks crypto portfolios and DeFi investments. (React Native, Web3, Firebase)
 
 - **Certifications**: Data Science Certification (IBM), AI & Machine Learning Fundamentals (DeepLearning.AI), SURE Trust Shortlist (Generative AI & VLSI Design), MSME & Skill India Certification, Google Cloud Study Jam.
 
