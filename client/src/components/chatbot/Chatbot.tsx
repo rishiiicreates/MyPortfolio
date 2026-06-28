@@ -125,6 +125,7 @@ const Chatbot = () => {
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
             className="fixed bottom-16 right-6 z-[9998] w-[90vw] sm:w-[400px] h-[600px] max-h-[calc(100vh-120px)] bg-background/95 backdrop-blur-xl border border-border rounded-2xl shadow-2xl flex flex-col overflow-hidden"
+            data-lenis-prevent="true"
           >
             {/* Header */}
             <div className="bg-transparent p-4 flex items-center justify-between border-b border-border">
