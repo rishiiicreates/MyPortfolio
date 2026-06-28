@@ -149,7 +149,7 @@ const Chatbot = () => {
             </div>
 
             {/* Messages */}
-            <div className="flex-1 p-4 overflow-y-auto overscroll-contain chat-scrollbar space-y-4">
+            <div className="flex-1 min-h-0 p-4 overflow-y-auto overscroll-contain chat-scrollbar space-y-4">
               {messages.map((message) => (
                 <div
                   key={message.id}
