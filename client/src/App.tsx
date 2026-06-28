@@ -12,6 +12,7 @@ import MusicPlayer from "@/components/MusicPlayer";
 import { PORTFOLIO_TRACKS } from "@/data/tracks";
 import { ThemeProvider } from "@/hooks/use-theme";
 import { useState, useEffect } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 import SmoothScroll from "@/components/SmoothScroll";
 import OnekoFollower from "@/components/OnekoFollower";
@@ -68,6 +69,7 @@ function App() {
 
         {/* Floating music player UI — persists across navigation */}
         <MusicPlayer tracks={PORTFOLIO_TRACKS} isGlobal={false} />
+        <Analytics />
       </QueryClientProvider>
     </ThemeProvider>
   );
