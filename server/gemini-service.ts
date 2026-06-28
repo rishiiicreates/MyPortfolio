@@ -63,7 +63,7 @@ export async function generateChatbotResponse(userMessage: string): Promise<stri
     console.log("Generating Gemini response for:", userMessage);
 
     const response = await ai.models.generateContent({
-      model: "gemini-2.5-flash-lite",
+      model: "gemini-2.5-flash",
       contents: `System Context:\n${systemContext}\n\nUser Question:\n${userMessage}`,
     });
 
