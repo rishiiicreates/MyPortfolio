@@ -1,8 +1,7 @@
 import { GoogleGenAI } from "@google/genai";
 import * as dotenv from 'dotenv';
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import * as fs from 'fs';
+import * as path from 'path';
 
 // Load environment variables
 dotenv.config();
@@ -59,7 +58,7 @@ ${JSON.stringify(rishiiData, null, 2)}
 
     const response = await ai.models.generateContent({
       model: "gemini-2.5-flash",
-      contents: \`System Context:\\n\${systemContext}\\n\\nUser Question:\\n\${userMessage}\`,
+      contents: `System Context:\n${systemContext}\n\nUser Question:\n${userMessage}`,
     });
 
     return response.text || "";
