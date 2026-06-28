@@ -24,62 +24,62 @@ export interface Certificate {
   image?: string;
 }
 
-// Import project images
-import dashmetricsImg from '@/assets/images/projects/dashmetrics.png';
-import nftMarketplaceImg from '@/assets/images/projects/nft-marketplace.jpeg';
-import aiContentGeneratorImg from '@/assets/images/projects/ai-content-generator.jpeg';
-import defiDashboardImg from '@/assets/images/projects/defi-dashboard.jpeg';
-import nudgeMarketImg from '@/assets/images/projects/nudge-market-app.webp';
-import houselAppImg from '@/assets/images/projects/housel-app.jpeg';
-
 export const portfolioProjects: Project[] = [
   {
-    title: "DashMetrics",
-    description: "A minimal and intuitive SaaS platform designed to centralize and simplify social media analytics. It helps users track their social accounts' performance, manage saved/bookmarked content, and gain deep insights—all in one place.",
-    technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "API Integration"],
-    githubUrl: "https://github.com/rishiiicreates/DashMetrics-final-.git",
-    liveUrl: "#projects",
-    image: dashmetricsImg
+    title: "RAWFY",
+    description: "Universal web perception skill for AI agents — converts any URL into structured, agent-readable content with described images, transcribed video, and interactive element maps.",
+    technologies: ["Python", "AI", "Web Scraping"],
+    githubUrl: "https://github.com/rishiiicreates/rawfy",
+    liveUrl: "https://github.com/rishiiicreates/rawfy",
+    image: "/rawfy.jpeg"
   },
   {
-    title: "NFT Marketplace",
-    description: "A decentralized marketplace for digital artists to mint, sell, and trade NFTs with Web 3.0 integration.",
-    technologies: ["React", "Solidity", "Ethereum", "Web3.js"],
-    githubUrl: "https://github.com/rishiiicreates",
-    liveUrl: "#projects",
-    image: nftMarketplaceImg
+    title: "DOUBT SOLVER",
+    description: "A local Retrieval-Augmented Generation (RAG) pipeline using LangChain and Ollama to process academic queries across a 229-unit vector knowledge base.",
+    technologies: ["Python", "LangChain", "ChromaDB", "Ollama", "Streamlit"],
+    githubUrl: "https://github.com/rishiiicreates/srm-doubt-solver",
+    liveUrl: "https://github.com/rishiiicreates/srm-doubt-solver",
+    image: "/docmind.png"
   },
   {
-    title: "Nudge: Local Market App",
-    description: "A walkthrough marketplace app for local vendors and businesses, similar to McDonald's app but focused on connecting consumers with nearby stores and products in real-time.",
-    technologies: ["React Native", "Firebase", "Google Maps API", "Redux", "Payment Gateway Integration"],
-    githubUrl: "https://github.com/rishiiicreates",
-    liveUrl: "#projects",
-    image: nudgeMarketImg
+    title: "EMAIL TRIAGE AGENT",
+    description: "An OpenEnv-compliant benchmarking API using FastAPI and Docker to evaluate LLM agents on multi-step reasoning, semantic routing, and PII detection.",
+    technologies: ["Python", "FastAPI", "Docker", "Hugging Face"],
+    githubUrl: "https://github.com/rishiiicreates/email-triage-env",
+    liveUrl: "https://github.com/rishiiicreates/email-triage-env",
+    image: "/email-triage-agent.jpeg"
   },
   {
-    title: "Housel: AI Reminder App",
-    description: "An intelligent reminder application that learns user's daily routines and automatically adjusts notifications based on behavior patterns and schedule changes.",
-    technologies: ["React", "TypeScript", "Machine Learning", "Node.js", "MongoDB", "OpenAI API"],
+    title: "DASHMETRICS",
+    description: "A comprehensive social media analytics dashboard for creators and brands. Real-time ingestion pipelines processing 50k+ events/sec using Python and AWS.",
+    technologies: ["Next.js", "TypeScript", "Python", "AWS"],
     githubUrl: "https://github.com/rishiiicreates",
-    liveUrl: "#projects",
-    image: houselAppImg
+    liveUrl: "https://github.com/rishiiicreates",
+    image: "/dashmetrics.png"
   },
   {
-    title: "AI Content Generator",
-    description: "An application leveraging AI to help creators generate unique content for blogs, social media, and marketing.",
-    technologies: ["Next.js", "OpenAI API", "TypeScript", "Node.js"],
+    title: "HOUSEL",
+    description: "An adaptive smart home control interface powered by on-device AI. learns user habits to automate climate and lighting.",
+    technologies: ["React Native", "TensorFlow Lite", "Node.js"],
     githubUrl: "https://github.com/rishiiicreates",
-    liveUrl: "#projects",
-    image: aiContentGeneratorImg
+    liveUrl: "https://github.com/rishiiicreates",
+    image: "/housel.png"
   },
   {
-    title: "DeFi Dashboard App",
-    description: "A mobile app that tracks crypto portfolios, DeFi investments, and provides real-time market analysis.",
-    technologies: ["React Native", "Web3", "Firebase", "Chart.js"],
+    title: "NEURALFLUX",
+    description: "A node-based generative art platform using stable diffusion pipelines. Allows real-time parameter tweaking for digital artists.",
+    technologies: ["WebGL", "Three.js", "Python Fast API"],
     githubUrl: "https://github.com/rishiiicreates",
-    liveUrl: "#projects",
-    image: defiDashboardImg
+    liveUrl: "https://github.com/rishiiicreates",
+    image: "/neuralflux.png"
+  },
+  {
+    title: "3D SOLAR SYSTEM",
+    description: "A 3D solar system simulation featuring planetary orbits, interactive controls, and realistic textures.",
+    technologies: ["Three.js", "WebGL", "Vite"],
+    githubUrl: "https://github.com/rishiiicreates",
+    liveUrl: "https://the-pro-astronauts.vercel.app/",
+    image: "/webgl.png"
   }
 ];
 
