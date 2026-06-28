@@ -1,0 +1,39 @@
+{
+  "about": {
+    "name": "Rishii",
+    "contact": "+91 8960548709 | rishiicreates@gmail.com | https://rishiicreaetes.vercel.app/ | https://github.com/rishiiicreates",
+    "education": [
+      "SRM Institute of Science and Technology: B.Tech in Computer Science and Technology (2025-2029)",
+      "Indian Institute of Technology, Guwahati: BS in Artificial Intelligence and Machine Learning (2025-2027)"
+    ]
+  },
+  "skills": {
+    "languages": ["C++", "Python", "JavaScript/TypeScript", "SQL"],
+    "frameworks_and_libraries": ["React", "Next.js", "Node.js", "TensorFlow", "Scikit-Learn", "Matplotlib", "MatLab"],
+    "tools_and_cloud": ["AWS", "Firebase", "Vercel", "Render", "Git/GitHub", "Docker", "Kubernetes"]
+  },
+  "experience": [
+    "IBM | AI Automation Intern (May 2026 - Present): Developing automated workflows connecting systems with AI models, eliminating manual data entry bottlenecks.",
+    "IBM | AI Strategy and Business Intelligence Intern (Dec 2025 - Apr 2026): Trained XGBoost classifier (87% F1-score), deployed scalable inference APIs (FastAPI, Docker, Render), engineered automated data pipelines with LLMs & TensorFlow.",
+    "Wildish & Co. | Generative AI Engineer (Freelance) (Oct 2024 - Aug 2025): Developed AI-driven automated debugging pipeline, fine-tuned transformer models for anomaly detection."
+  ],
+  "projects": [
+    "RAWFY: Universal web perception skill for AI agents — converts any URL into structured, agent-readable content. (Python, AI, Web Scraping)",
+    "DOUBT SOLVER: Local RAG pipeline using LangChain and Ollama for academic queries across a vector knowledge base. (Python, LangChain, ChromaDB, Ollama, Streamlit)",
+    "EMAIL TRIAGE AGENT: OpenEnv-compliant benchmarking API to evaluate LLM agents on reasoning and routing. (Python, FastAPI, Docker, Hugging Face)",
+    "DASHMETRICS: SaaS social media analytics platform processing 50k+ events/sec. (Next.js, TypeScript, Python, AWS)",
+    "HOUSEL: Adaptive smart home control interface powered by on-device AI. (React Native, TensorFlow Lite, Node.js)",
+    "NEURALFLUX: Node-based generative art platform using stable diffusion pipelines. (WebGL, Three.js, Python Fast API)",
+    "3D SOLAR SYSTEM: Interactive 3D solar system simulation with planetary orbits and realistic textures. (Three.js, WebGL, Vite)"
+  ],
+  "certifications": [
+    "Data Science Certification (IBM)",
+    "AI & Machine Learning Fundamentals (DeepLearning.AI)",
+    "SURE Trust Shortlist (Generative AI & VLSI Design)",
+    "MSME & Skill India Certification",
+    "Google Cloud Study Jam"
+  ],
+  "website_features": {
+    "cat": "Shiro, Rishii's virtual pet cat! It adds a fun, interactive personality to the portfolio."
+  }
+}
