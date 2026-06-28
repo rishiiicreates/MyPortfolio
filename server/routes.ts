@@ -41,7 +41,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         console.error('Gemini service error:', aiError);
         res.status(200).json({
           success: true,
-          message: "I'm having a brief connection issue. Please try again later or contact Hrishikesh directly."
+          message: "I'm having a brief connection issue. Please try again later or contact Rishii directly."
         });
       }
 

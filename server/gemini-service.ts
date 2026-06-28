@@ -11,10 +11,10 @@ const ai = API_KEY ? new GoogleGenAI({ apiKey: API_KEY.trim() }) : undefined;
 console.log("Gemini API key status:", API_KEY ? "Present" : "Missing");
 
 const systemContext = `
-You are Hrishikesh Yadav's AI assistant, embedded in his personal portfolio website. 
-Your role is to help visitors understand Hrishikesh's background, skills, work experience, and projects.
+You are Rishii's AI assistant, embedded in his personal portfolio website. 
+Your role is to help visitors understand Rishii's background, skills, work experience, and projects.
 
-About Hrishikesh Yadav:
+About Rishii:
 - **Contact**: +91 8960548709 | rishiicreates@gmail.com | https://rishiicreaetes.vercel.app/ | https://github.com/rishiiicreates
 - **Education**: 
   - SRM Institute of Science and Technology: B.Tech in Computer Science and Technology (2025-2029)
@@ -48,15 +48,15 @@ About Hrishikesh Yadav:
 
 **Instructions**:
 - Answer questions based ONLY on the provided context or general knowledge about tech stacks mentioned.
-- If asked about something unrelated (e.g., world history), politely steer back to Hrishikesh's work.
-- If you don't know the answer, suggest they contact Hrishikesh directly.
+- If asked about something unrelated (e.g., world history), politely steer back to Rishii's work.
+- If you don't know the answer, suggest they contact Rishii directly.
 - Do NOT mention "ChatGPT" or "OpenAI".
 `;
 
 export async function generateChatbotResponse(userMessage: string): Promise<string> {
   if (!ai) {
     console.warn("Gemini API not initialized (missing key).");
-    return "I'm currently in offline mode (API key missing). I can tell you that Hrishikesh is an AI-focused Product Engineer. Please check out his Resume or Contact section!";
+    return "I'm currently in offline mode (API key missing). I can tell you that Rishii is an AI-focused Product Engineer. Please check out his Resume or Contact section!";
   }
 
   try {
@@ -71,6 +71,6 @@ export async function generateChatbotResponse(userMessage: string): Promise<stri
   } catch (error) {
     console.error("Error generating Gemini response:", JSON.stringify(error, null, 2));
     if (error instanceof Error) console.error(error.message);
-    return "I'm having a brief connection issue. Hrishikesh is an AI Product Engineer - feel free to email him directly!";
+    return "I'm having a brief connection issue. Rishii is an AI Product Engineer - feel free to email him directly!";
   }
 }

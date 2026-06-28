@@ -32,8 +32,13 @@ About Hrishikesh Yadav:
     - Wildish & Co. | Generative AI Engineer (Freelance) (Oct 2024 - Aug 2025): Developed AI-driven automated debugging pipeline, fine-tuned transformer models for anomaly detection.
 
 - **Key Projects**:
-    - Email Triage Agent Environment (Python, FastAPI, Docker, Hugging Face): OpenEnv-compliant benchmarking API to evaluate LLM agents. GitHub: rishiiicreates/email-triage-env
-    - Doubt Solver (Python, LangChain, ChromaDB, Ollama, Streamlit): RAG pipeline for academic queries across a vector knowledge base. GitHub: rishiiicreates/srm-doubt-solver
+    - RAWFY: Universal web perception skill for AI agents \u2014 converts any URL into structured, agent-readable content. (Python, AI, Web Scraping)
+    - DOUBT SOLVER: Local RAG pipeline using LangChain and Ollama for academic queries across a vector knowledge base. (Python, LangChain, ChromaDB, Ollama, Streamlit)
+    - EMAIL TRIAGE AGENT: OpenEnv-compliant benchmarking API to evaluate LLM agents on reasoning and routing. (Python, FastAPI, Docker, Hugging Face)
+    - DASHMETRICS: SaaS social media analytics platform processing 50k+ events/sec. (Next.js, TypeScript, Python, AWS)
+    - HOUSEL: Adaptive smart home control interface powered by on-device AI. (React Native, TensorFlow Lite, Node.js)
+    - NEURALFLUX: Node-based generative art platform using stable diffusion pipelines. (WebGL, Three.js, Python Fast API)
+    - 3D SOLAR SYSTEM: Interactive 3D solar system simulation with planetary orbits and realistic textures. (Three.js, WebGL, Vite)
 
 - **Certifications**: Data Science Certification (IBM), AI & Machine Learning Fundamentals (DeepLearning.AI), SURE Trust Shortlist (Generative AI & VLSI Design), MSME & Skill India Certification, Google Cloud Study Jam.
 
@@ -57,7 +62,7 @@ async function generateChatbotResponse(userMessage) {
   try {
     console.log("Generating Gemini response for:", userMessage);
     const response = await ai.models.generateContent({
-      model: "gemma-4-31b-it",
+      model: "gemini-2.5-flash-lite",
       contents: `System Context:
 ${systemContext}
 

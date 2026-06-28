@@ -18,7 +18,7 @@ const Chatbot = () => {
     {
       id: "initial",
       type: "bot",
-      text: "Hello! I'm Hrishikesh's AI assistant powered by Gemini. Ask me anything about his projects, skills, or experience!",
+      text: "Hello! I'm Rishii's AI assistant powered by Gemini. Ask me anything about his projects, skills, or experience!",
       timestamp: new Date(),
     },
   ]);
