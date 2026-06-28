@@ -64,7 +64,12 @@ ${JSON.stringify(rishiiData, null, 2)}
     return response.text || "";
   } catch (error) {
     console.error("Error generating Gemini response:", JSON.stringify(error, null, 2));
-    if (error instanceof Error) console.error(error.message);
+    if (error instanceof Error) {
+      console.error(error.message);
+      if (error.message.includes("429") || error.message.includes("Quota") || error.message.includes("quota") || error.message.includes("RESOURCE_EXHAUSTED")) {
+        return "Whoa there, you're asking too many questions! I've hit my API rate limit for now. Give me a minute to cool down and try again.";
+      }
+    }
     return "I'm having a brief connection issue. Rishii is an AI Product Engineer - feel free to email him directly!";
   }
 }
