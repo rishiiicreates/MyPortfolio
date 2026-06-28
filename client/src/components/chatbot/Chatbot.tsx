@@ -124,7 +124,7 @@ const Chatbot = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="fixed bottom-16 right-6 z-[9998] w-[90vw] sm:w-[400px] h-[600px] bg-background/95 backdrop-blur-xl border border-border rounded-2xl shadow-2xl flex flex-col overflow-hidden"
+            className="fixed bottom-16 right-6 z-[9998] w-[90vw] sm:w-[400px] h-[600px] max-h-[calc(100vh-120px)] bg-background/95 backdrop-blur-xl border border-border rounded-2xl shadow-2xl flex flex-col overflow-hidden"
           >
             {/* Header */}
             <div className="bg-transparent p-4 flex items-center justify-between border-b border-border">
@@ -149,7 +149,7 @@ const Chatbot = () => {
             </div>
 
             {/* Messages */}
-            <div className="flex-1 p-4 overflow-y-auto space-y-4">
+            <div className="flex-1 p-4 overflow-y-auto chat-scrollbar space-y-4">
               {messages.map((message) => (
                 <div
                   key={message.id}
