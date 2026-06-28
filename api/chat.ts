@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { generateChatbotResponse } from "../server/gemini-service";
+import { generateChatbotResponse } from "../server/gemini-service.js";
 
 const chatbotSchema = z.object({
   message: z.string().min(1)
